@@ -20,7 +20,7 @@ export default {
     },
     filters:{
         formatTime(val){
-            let t = new Date((val+'000')/1)
+            let t = new Date((val+'000')*1)
             return t.getMonth()+1+'月'+t.getDate()+'日'+t.getHours()+'时'+t.getMinutes()+'分'
         }
     },

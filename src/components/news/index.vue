@@ -7,7 +7,7 @@
       :url="item.eventUrl"
       :time="item.eventTime"
     >{{item.eventDescription}}</timeline>
-    <timeline></timeline>
+    <!-- <timeline></timeline> -->
   </div>
 </template>
 <script>
