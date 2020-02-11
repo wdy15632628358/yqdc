@@ -34,10 +34,14 @@ export default {
     height: 200px;
     color: #fff;
     h5 {
-      padding: 36px;
+      padding: 36px 30px 2px 30px;
+      color:#ddeff0;
     }
     h1 {
-      padding: 12px;
+      padding: 12px 12px 2px 12px;
+      color:#eee;
+      font-size:36px;
+      font-weight: 600;
     }
   }
   .bodyBox {
