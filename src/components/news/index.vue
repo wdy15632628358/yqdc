@@ -8,6 +8,7 @@
       :time="item.eventTime"
     >{{item.eventDescription}}</timeline>
     <!-- <timeline></timeline> -->
+    <el-button @click="fn">{{str}}</el-button>
   </div>
 </template>
 <script>
@@ -18,14 +19,28 @@ export default {
   name: "news",
   data() {
     return {
-      list: []
+      allList: [],
+      list: [],
+      str: "点击显示更多"
     };
   },
   created() {
     getZbData().then(data => {
       console.log(data);
-      this.list = data.items;
+      this.allList = data.items;
+      this.list = this.allList.slice(0, 10);
     });
+  },
+  methods: {
+    fn() {
+      if (this.list.length > 10) {
+        this.list = this.allList.slice(0, 10);
+        this.str = "点击显示更多";
+      } else {
+        this.list = this.allList.slice(0);
+        this.str = "点击收回";
+      }
+    }
   },
   components: {
     timeline
