@@ -1,10 +1,10 @@
 <template>
     <div class="time_line_box">
         <div class="time_box">
-            02月11日 13:45
+            {{time|formatTime}}
         </div>
         <div class="text_box">
-            <a href="https://baidu.com">国家卫生委员会</a>
+            <a :href="url"><slot></slot></a>
         </div>
     </div>
 </template>
@@ -12,9 +12,16 @@
 // @ is an alias to /src
 export default {
     name: 'timeline',
+    props:['time','url'],
     data() {
         return {
         
+        }
+    },
+    filters:{
+        formatTime(val){
+            let t = new Date((val+'000')/1)
+            return t.getMonth()+1+'月'+t.getDate()+'日'+t.getHours()+'时'+t.getMinutes()+'分'
         }
     },
     components: {
